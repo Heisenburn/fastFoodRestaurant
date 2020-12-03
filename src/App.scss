@@ -1,0 +1,134 @@
+$gray: #c4c4c4;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+html,
+body,
+#root,
+#root > div {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    main {
+        background: $gray;
+        width: 900px;
+        height: 700px;
+    }
+
+    #heading {
+        width: 400px;
+        padding-left: 40px;
+        padding-top: 30px;
+
+        h1 {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 45px;
+            color: white;
+        }
+
+        #burgerBars {
+            margin-top: -10px;
+            width: 300px;
+            height: 16px;
+            display: block;
+
+            .burgerBar {
+                display: block;
+                width: 275px;
+                height: 4px;
+                margin-bottom: 2px;
+                background: #ffe926;
+            }
+
+            .burgerBar:nth-of-type(2n) {
+                margin-left: -5px;
+            }
+
+            .burgerBar:nth-of-type(3n) {
+                margin-left: -10px;
+            }
+
+            .brownBurger {
+                background: #c86205;
+            }
+        }
+    }
+}
+
+#ProductsContainer {
+    background: white;
+    width: 90%;
+    height: 90%;
+    margin: 20px auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.ProductBox {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    background: $gray;
+    padding: 30px;
+    border-radius: 5px;
+    img {
+        max-width: 100%;
+    }
+
+    position: relative;
+
+    #quantityControllerContainer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .ProductInfoBox {
+        width: 23px;
+        height: 23px;
+        background: black;
+        color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.AddElementBox,
+        &.DecrementBox {
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(0.95);
+            }
+
+            &:active {
+                background: red;
+                transition: 0.1s linear;
+            }
+        }
+    }
+
+    .QuantityBox {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
